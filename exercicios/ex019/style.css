@@ -48,7 +48,9 @@ div.img {
 }
 
 div#mae {
+    width: 300px;
     background-image: url('imagens/mae.png');
+    margin: auto;
 }
 
 header {
