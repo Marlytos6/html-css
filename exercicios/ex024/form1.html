@@ -12,17 +12,10 @@
     </style>
 </head>
 <body>
-    <form>
-        <p>Nome: <input type="text" name="nome" id="nome"></p>
-        <p>Sobrenome: <input type="text" name="sobrenome" id="sobrenome"></p>
-        <input type="submit" value="Enviar" id="botao" onclick="enviar()">
-        <script>
-            let nome = document.getElementsByName('nome')
-            let sobrenome = document.getElementsByName('sobrenome')
-            function enviar() {
-                window.alert(`Esses são os dados enviados ${nome.values} ${sobrenome.values}`)
-            }
-        </script>
+    <form action="script.php" autocomplete="off">
+        <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome"></p>
+        <p><label for="sobrenome">Sobrenome: </label><input type="text" name="sobrenome" id="sobrenome"></p>
+        <input type="submit" value="Enviar">
     </form>
 </body>
 </html>
