@@ -12,10 +12,11 @@
     </style>
 </head>
 <body>
-    <form action="script.php" autocomplete="off">
-        <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome"></p>
-        <p><label for="sobrenome">Sobrenome: </label><input type="text" name="sobrenome" id="sobrenome"></p>
+    <form action="script.php" autocomplete="on" method="post">
+        <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome" autocomplete="name" required maxlength="15" size="20" minlength="5" placeholder="Digite o nome"></p>
+        <p><label for="sobrenome">Sobrenome: </label><input type="text" name="sobrenome" id="sobrenome" autocomplete="additional-name" required maxlength="15" size="20" minlength="5" placeholder="Digite o sobrenome"></p>
         <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
     </form>
 </body>
 </html>
