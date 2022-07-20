@@ -13,8 +13,26 @@
 </head>
 <body>
     <form action="script.php" autocomplete="on" method="post">
-        <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome" autocomplete="name" required maxlength="15" size="20" minlength="5" placeholder="Digite o nome"></p>
-        <p><label for="sobrenome">Sobrenome: </label><input type="text" name="sobrenome" id="sobrenome" autocomplete="additional-name" required maxlength="15" size="20" minlength="5" placeholder="Digite o sobrenome"></p>
+        <fieldset>
+            <legend>Dados do Cliente</legend>
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" autocomplete="name" required maxlength="15" size="20" minlength="5" placeholder="Digite o nome">
+            </p>
+            <p>
+                <label for="sobrenome">Sobrenome: </label>
+                <input type="text" name="sobrenome" id="sobrenome" autocomplete="additional-name" required maxlength="15" size="20" minlength="5" placeholder="Digite o sobrenome">
+            </p>
+            <p>
+                <!-- RegEx não funciona? -->
+                <label for="telefone">Telefone: </label>
+                <input type="tel" name="telefone" id="telefone" required pattern="^\(\d{2}\)\d{4, 5}-\d{4}$" autocomplete="tel">
+            </p>
+            <p>
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" required autocomplete="email">
+            </p>
+        </fieldset>
         <input type="submit" value="Enviar">
         <input type="reset" value="Limpar">
     </form>
