@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,26 +12,90 @@
         }
     </style>
 </head>
+
 <body>
     <form action="script.php" autocomplete="on" method="post">
         <fieldset>
             <legend>Dados do Cliente</legend>
             <p>
-                <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" autocomplete="name" required maxlength="15" size="20" minlength="5" placeholder="Digite o nome">
+                <label for="ifile">Sua imagem: </label>
+                <input type="file" name="file" id="ifile">
             </p>
             <p>
-                <label for="sobrenome">Sobrenome: </label>
-                <input type="text" name="sobrenome" id="sobrenome" autocomplete="additional-name" required maxlength="15" size="20" minlength="5" placeholder="Digite o sobrenome">
+                <label for="inome">Nome: </label>
+                <input type="text" name="nome" id="inome" autocomplete="name" required maxlength="15" size="20"
+                    minlength="5" placeholder="Digite o nome">
+            </p>
+            <p>
+                <label for="isobrenome">Sobrenome: </label>
+                <input type="text" name="sobrenome" id="isobrenome" autocomplete="additional-name" required
+                    maxlength="15" size="20" minlength="5" placeholder="Digite o sobrenome">
             </p>
             <p>
                 <!-- RegEx não funciona? -->
-                <label for="telefone">Telefone: </label>
-                <input type="tel" name="telefone" id="telefone" required pattern="^\(\d{2}\)\d{4, 5}-\d{4}$" autocomplete="tel">
+                <label for="itelefone">Telefone: </label>
+                <input type="tel" name="telefone" id="itelefone" required pattern="^\(\d{2}\)\d{4, 5}-\d{4}$"
+                    autocomplete="tel">
             </p>
             <p>
-                <label for="email">E-mail: </label>
-                <input type="email" name="email" id="email" required autocomplete="email">
+                <label for="iemail">E-mail: </label>
+                <input type="email" name="email" id="iemail" required autocomplete="email">
+            </p>
+            <p>
+                <label for="iprof">Profissão: </label>
+                <input type="text" name="prof" id="iprof" list="lst">
+                <datalist id="lst">
+                    <option value="ADM">Administrador</option>
+                    <option value="CONT">Contabilista</option>
+                    <option value="DEV">Desenvolvedor</option>
+                    <option value="PROF">Professor</option>
+                </datalist>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Localidades</legend>
+            <p>
+                <label for="ies">Estado: </label>
+                <select name="Estado" id="ies">
+                    <option value="">--Escolha--</option>
+                    <optgroup label="Norte">
+                        <option value="AC">Acre</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="PA">Pará</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="TO">Tocantins</option>
+                    </optgroup>
+                    <optgroup label="Nordeste">
+                        <option value="MA">Maranhão</option>
+                        <option value="PI">Piauí</option>
+                        <option value="CE">Ceará</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="BA">Bahia</option>
+                    </optgroup>
+                    <optgroup label="Centro-Oeste">
+                        <option value="GO">Goiás</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="DF">Distrito Federal*</option>
+                    </optgroup>
+                    <optgroup label="Suldeste">
+                        <option value="ES">Espírito Santo</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                    </optgroup>
+                    <optgroup label="Sul">
+                        <option value="SC">Santa Catarina</option>
+                        <option value="PR">Paraná</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                    </optgroup>
+                </select>
             </p>
         </fieldset>
         <fieldset>
@@ -41,14 +106,18 @@
             </p>
             <p>
                 <label for="irang">Volume: </label>
-                <input type="range" name="rang" id="irang" max="10" value="5">
+                <input type="range" name="rang" id="irang" max="10" value="5" oninput="ivol.innerHTML = Number(irang.value)">
+                <output name="vol" id="ivol">5</output>
             </p>
-            <p>
-                <label for="ifile">Sua imagem: </label>
-                <input type="file" name="file" id="ifile">
-            </p>
+        </fieldset>
+        <p>
+            <label for="imsg">Deixe o seu comentário: </label>
+            <br>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
         <input type="submit" value="Enviar">
         <input type="reset" value="Limpar">
     </form>
 </body>
+
 </html>
