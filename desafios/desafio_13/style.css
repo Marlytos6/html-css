@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    border: 3px solid black;
+    grid-template: 2fr 1fr 4fr 1fr / 2fr 1fr;
+    gap: 5px;
+}
+
+.item {
+    border: 3px dashed gray;
+    text-align: center;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+header {
+    grid-column: 1 / -1;
+}
+
+nav {
+    grid-column: 1 / -1;
+}
+
+footer {
+    grid-column: 1 / -1;
+}
